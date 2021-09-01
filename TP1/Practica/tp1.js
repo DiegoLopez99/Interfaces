@@ -67,3 +67,5 @@ function promedioFila(matriz){
     return promediosFila;
 }
 
+
+//Ejercicio 2)
