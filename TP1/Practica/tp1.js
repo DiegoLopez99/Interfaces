@@ -69,3 +69,33 @@ function promedioFila(matriz){
 
 
 //Ejercicio 2)
+
+let canvas = document.querySelector("#canvas");
+let ctx = canvas.getContext("2d");
+let width = canvas.width;
+let height = canvas.height;
+let imageData = ctx.createImageData(width, height);
+
+let r = 255;
+let g = 100;
+let b = 200;
+let a = 255;
+
+function drawRect(imageData, r, g, b, a){
+    for(let x = 0; x < 100; x++){
+        for(let y = 0; y < 100; y++){
+            setPixel(imageData, x, y, r, g, b, a);
+        }
+    }
+}
+
+function setPixel(imageData, x, y, r, g, b, a){
+    let index = (x + y * imageData.width) * 4;
+    imageData.data[index + 0] = r;
+    imageData.data[index + 1] = g;
+    imageData.data[index + 2] = b;
+    imageData.data[index + 3] = a;
+}
+
+drawRect(imageData, r, g, b, a);
+ctx.putImageData(imageData, 0, 0);
