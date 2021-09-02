@@ -147,8 +147,8 @@ function drawRect5(imageData){
             b = 0;
         }else{
             var coeficiente2 = 255 / (width5);
-            r = coeficiente2 * x;
-            g = 255 - (coeficiente2 * x);
+            r = coeficiente * x;
+            g = 255 - coeficiente2;
             b = 0;
         }
         for(let y = 0; y < height5; y++){
