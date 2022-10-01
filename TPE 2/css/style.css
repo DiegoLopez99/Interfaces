@@ -514,6 +514,16 @@ body{
     cursor: pointer;
 }
 
+.card .capa a{
+    padding: 10px 25px;
+    background-color: #27BF17;
+    font-size: 18px;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
 .cardGenero .capa button{
     padding: 6px 20px;
     font-size: 16px;
