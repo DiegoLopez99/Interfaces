@@ -49,6 +49,47 @@ addEventListener("DOMContentLoaded", (e) => {
         });
     }
 
+    // ------ Botones Like agina de juego -------
 
+    const botones = document.querySelectorAll("#btnInteraccionJuego");
+    const iconos = document.querySelectorAll("#iconosInteraccionJuego");
+
+    for(let i = 0; i < botones.length; i++){
+        botones[i].addEventListener("click", function() {
+            if(iconos[i].classList.contains("fa-regular")){
+                iconos[i].classList.remove("fa-regular");
+                iconos[i].classList.add("fa-solid");
+                if(i == 0){
+                    iconos[i].classList.add("activarMG")
+                    if(iconos[i+1].classList.contains("fa-solid")){
+                        iconos[i+1].classList.remove("fa-solid");
+                        iconos[i+1].classList.add("fa-regular");
+                        iconos[i+1].classList.remove("activarNoMG")
+                    }
+                }else if(i == 1){
+                    iconos[i].classList.add("activarNoMG")
+                    if(iconos[i-1].classList.contains("fa-solid")){
+                        iconos[i-1].classList.remove("fa-solid");
+                        iconos[i-1].classList.add("fa-regular");
+                        iconos[i-1].classList.remove("activarMG")
+                    }
+                }else{
+                    iconos[i].classList.add("activarFavorito")
+                }
+            }else{
+                iconos[i].classList.remove("fa-solid");
+                iconos[i].classList.add("fa-regular");
+                if(i == 0){
+                    iconos[i].classList.remove("activarMG")
+                }else if(i == 1){
+                    iconos[i].classList.remove("activarNoMG")
+                }else{
+                    iconos[i].classList.remove("activarFavorito")
+                }
+            }
+
+
+        });
+    }
 
 });
