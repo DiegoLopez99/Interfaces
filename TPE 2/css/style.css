@@ -1027,3 +1027,184 @@ footer{
     width: 100%;
     height: 100%;
 }
+
+.seccionComentarios{
+    width: 100%;
+    background-color: #08287C;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.seccionComentarios .titulo{
+    margin-left: 35px;
+    margin-top: 25px;
+}
+
+.seccionComentarios .titulo h2{
+    color: #fff;
+    font-size: 24px;
+    padding-top: 13px;
+}
+
+.seccionComentarios .miComentario{
+    width: 100%;
+    margin-left: 25px;
+    margin-top: 25px;
+    display: flex;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario{
+    margin-left: 10px;
+    width: 500px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input{
+    position: relative;
+    width: 100%;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input{
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: solid 2px #1C45B4;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input::placeholder{
+    color: #1C45B4;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input .underline{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input .underline::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input:focus ~ .underline::before{
+    transform: scaleX(1);
+}
+
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .cancelar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 5px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .comentar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: none;
+    border: 3px solid #0B7800;
+    color: #0B7800;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .comentar:hover{
+    background-color: #0B7800;
+    color: #fff;
+}
+
+
+.seccionComentarios .avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FCFF58;
+}
+
+.seccionComentarios .avatar i{
+    font-size: 26px;
+}
+
+.seccionComentarios #avatar1{
+    background-color: #FF5858;
+}
+
+.seccionComentarios #avatar2{
+    background-color: #F258FF;
+}
+
+.seccionComentarios #avatar3{
+    background-color: #58FFFF;
+    margin-bottom: 25px;
+}
+
+.seccionComentarios .comentariosComunidad{
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-top: 25px;
+    border-top: solid 4px #1C45B4;
+}
+
+.seccionComentarios .comentariosComunidad .comentario{
+    display: flex;
+    margin-top: 25px;
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario{
+    margin-left: 8px
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario h6{
+    color: #fff;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario p{
+    color: #fff;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

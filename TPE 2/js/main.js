@@ -49,7 +49,7 @@ addEventListener("DOMContentLoaded", (e) => {
         });
     }
 
-    // ------ Botones Like agina de juego -------
+    // ------ Botones Like Pagina de juego -------
 
     const botones = document.querySelectorAll("#btnInteraccionJuego");
     const iconos = document.querySelectorAll("#iconosInteraccionJuego");
