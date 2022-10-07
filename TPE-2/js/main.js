@@ -92,4 +92,24 @@ addEventListener("DOMContentLoaded", (e) => {
         });
     }
 
+    /* -------- Botones Comentar -------- */
+
+    const btnCancelar = document.querySelector("#btnCancelar");
+    const btnComentar = document.querySelector("#btnComentar");
+    const botonesComentar = document.querySelector("#botonesComentar");
+
+    document.querySelector("#inputComentario").addEventListener("click", function(){
+        botonesComentar.classList.add("mostrarBotones")
+    });
+
+    document.querySelector("#inputComentario").addEventListener("input", function(){
+        btnComentar.classList.add("activarBtn");
+    });
+
+    btnCancelar.addEventListener("click", function(){
+        botonesComentar.classList.remove("mostrarBotones")
+    });
+
+
+
 });
