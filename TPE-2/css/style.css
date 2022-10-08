@@ -791,7 +791,6 @@ footer{
 }
 
 .breadcrumb{
-    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -1206,13 +1205,159 @@ footer{
 }
 
 
+/* ------- Pagina proximo estreno -------- */
+
+.contProxEstreno{
+    width: 100%;
+
+}
+
+.contProxEstreno .breadcrumb{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.contProxEstreno .imagenPrincipal{
+    width: 100%;
+    height: 780px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contProxEstreno .imagenPrincipal .fondoImagen{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .fondoImagen img{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .filtroFondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.466);
+}
 
 
+.contProxEstreno .imagenPrincipal .logo{
+    width: 715px;
+    height: 235px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.contProxEstreno .imagenPrincipal .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .imagenPersonajes{
+    height: 1050px;
+    width: 850px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -70px;
+    margin-right: -50px;
+}
+
+.contProxEstreno .imagenPrincipal .imagenPersonajes img{
+    width: 100%;
+    height: 100%;
+}
+
+.cardPersonajesPrincipales{
+    width: 100%;
+    background-color: #08287C;
+
+}
+
+.cardPersonajesPrincipales .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardPersonajesPrincipales .titulo h2{
+    color: #fff;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 45px;
+    margin-top: 45px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes{
+    width: 260px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .imagen{
+    width: 100%;
+    height: 86%;
+    transition: all 500ms ease-in-out;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades{
+    width: 100%;
+    height: 270px;
+    background-color: #021344;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    margin-top: 295px;
+    transition: all 500ms ease-in-out;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades h5{
+    color: #fff;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades ul{
+   padding: 15px;
+   padding-left: 30px;
+   padding-top: 5px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades ul li{
+    color: #fff;
+    list-style: disc;
+    margin-top: 10px;
+    font-size: 14px;
+}
 
 
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes:hover > .imagen{
+    transform: translateY(-200px);
+}
 
-
-
-
-
-
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes:hover > .habilidades{
+    transform: translateY(-200px);
+}
