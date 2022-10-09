@@ -28,7 +28,7 @@ addEventListener("DOMContentLoaded", (e) => {
         menu.classList.toggle("activar")
     }
 
-    // ------ Carrusel ------
+    // ------ Carrusel Inicio ------
 
     const fila = document.querySelectorAll(".containerCarrusel");
 
@@ -48,7 +48,7 @@ addEventListener("DOMContentLoaded", (e) => {
             carrusel.scrollLeft -= carrusel.offsetWidth;
         });
     }
-
+    
     // ------ Botones Like Pagina de juego -------
 
     const botones = document.querySelectorAll("#btnInteraccionJuego");
