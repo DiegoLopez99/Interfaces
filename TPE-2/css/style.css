@@ -450,7 +450,6 @@ body{
 .card a img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: all 400ms ease-out;
 }
 
@@ -1698,7 +1697,7 @@ footer{
     
     .card .capa button{
         padding: 2px 8px;
-        font-size: 12px;
+        font-size: 10px;
         color: #fff;
     }
     
@@ -1744,8 +1743,8 @@ footer{
     }
     
     .titulo h4{
-        font-size: 15px;
-        margin-left: 5px;
+        font-size: 14px;
+        margin-left: 4px;
     }
 
     .containerCarrusel{
@@ -1762,4 +1761,87 @@ footer{
         overflow-x: scroll;
     }
 
+    .containerCarrusel .contCards::-webkit-scrollbar {
+        display: none;
+    }
+
+    footer{
+        height: auto;
+
+    }
+    
+    .contcardsFooter{
+        display: flex;
+        width: 98%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cardFooter{
+        width: 100px;
+        height: 120px;
+        padding: 4px;
+        border: none;
+        background-color: #021344;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+    
+    .cardFooter .imgFooter{
+        display: none;
+    }
+    
+    .cardFooter .descripcionCard{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    
+    
+    .cardFooter .descripcionCard .titulo{
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion{
+        width: 90%;
+        height: 100%;
+        justify-content: flex-start;
+    }
+    
+    .cardFooter .descripcionCard .descripcion a,
+    .cardFooter .descripcionCard .descripcion p{
+        font-size: 8px;
+
+    }
+    
+    .cardFooter .descripcionCard .descripcion .iconosRedesSociales{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1px;
+        padding-right: 1px;
+        margin-top: 5px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion .iconosRedesSociales i{
+        font-size: 20px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion .correo {
+        font-size: 6px;
+        margin-top: 2px;
+    }
+
+    .cardFooter .descripcionCard .descripcion ul li{
+        height: 12px;
+    }
+    
 }

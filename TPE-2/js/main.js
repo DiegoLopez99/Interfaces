@@ -45,7 +45,7 @@ addEventListener("DOMContentLoaded", (e) => {
     for(let i = 0; i < btnScrollIzq.length;i++){
         btnScrollIzq[i].addEventListener("click", function() {
             const carrusel = fila[i];
-            carrusel.scrollLeft -= carrusel.offsetWidth;
+            carrusel.scrollLeft -= (carrusel.offsetWidth - 383);
         });
     }
     
