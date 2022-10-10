@@ -110,6 +110,85 @@ addEventListener("DOMContentLoaded", (e) => {
         botonesComentar.classList.remove("mostrarBotones")
     });
 
+    // ------ Sliders Imagenes Juego ------
 
+    const sliderGrupos = document.querySelector("#sliderGrupos");
+    const sliderEstadios = document.querySelector("#sliderEstadios");
+
+    let imagenesSliderGrupos = document.querySelectorAll(".imagenSliderGrupos");
+    let imagenesSliderEstadios = document.querySelectorAll(".imagenSliderEstadios");
+    let imagenesSliderGruposLast = imagenesSliderGrupos[imagenesSliderGrupos.length-1];
+    let imagenesSliderEstadiosLast = imagenesSliderEstadios[imagenesSliderEstadios.length-1];
+
+    const btnSliderGruposLeft = document.querySelector("#btnSliderGruposLeft");
+    const btnSliderGruposRight = document.querySelector("#btnSliderGruposRight");
+    const btnSliderEstadiosLeft = document.querySelector("#btnSliderEstadiosLeft");
+    const btnSliderEstadiosRight = document.querySelector("#btnSliderEstadiosRight");
+
+    sliderGrupos.insertAdjacentElement('afterbegin', imagenesSliderGruposLast);
+    sliderEstadios.insertAdjacentElement('afterbegin', imagenesSliderEstadiosLast);
+
+    function SliderGruposSiguiente(){
+        let imagenesSliderGruposFirst = document.querySelectorAll(".imagenSliderGrupos")[0];
+        sliderGrupos.style.marginLeft = "-200%";
+        sliderGrupos.style.transition = "all 0.5s";
+        setTimeout(function(){
+            sliderGrupos.style.transition = "none";
+            sliderGrupos.insertAdjacentElement("beforeend", imagenesSliderGruposFirst);
+            sliderGrupos.style.marginLeft = "-100%";
+        }, 500);
+    }
+    function SliderEstadiosSiguiente(){
+        let imagenesSliderEstadiosFirst = document.querySelectorAll(".imagenSliderEstadios")[0];
+        sliderEstadios.style.marginLeft = "-200%";
+        sliderEstadios.style.transition = "all 0.5s";
+        setTimeout(function(){
+            sliderEstadios.style.transition = "none";
+            sliderEstadios.insertAdjacentElement("beforeend", imagenesSliderEstadiosFirst);
+            sliderEstadios.style.marginLeft = "-100%";
+
+        }, 500);
+    }
+
+    function SliderGruposAtras(){
+        let imagenesSliderGrupos = document.querySelectorAll(".imagenSliderGrupos");
+        let imagenesSliderGruposLast = imagenesSliderGrupos[imagenesSliderGrupos.length-1];
+        sliderGrupos.style.marginLeft = "0";
+        sliderGrupos.style.transition = "all 0.5s";
+        setTimeout(function(){
+            sliderGrupos.style.transition = "none";
+            sliderGrupos.insertAdjacentElement('afterbegin', imagenesSliderGruposLast);
+            sliderGrupos.style.marginLeft = "-100%";
+        }, 500);
+    }
+
+    function SliderEstadiosAtras(){
+        let imagenesSliderEstadios = document.querySelectorAll(".imagenSliderEstadios");
+        let imagenesSliderEstadiosLast = imagenesSliderEstadios[imagenesSliderEstadios.length-1];
+        sliderEstadios.style.marginLeft = "0";
+        sliderEstadios.style.transition = "all 0.5s";
+        setTimeout(function(){
+            sliderEstadios.style.transition = "none";
+            sliderEstadios.insertAdjacentElement('afterbegin', imagenesSliderEstadiosLast);
+            sliderEstadios.style.marginLeft = "-100%";
+
+        }, 500);
+    }
+
+    btnSliderGruposRight.addEventListener("click", function(){
+        SliderGruposSiguiente();
+    });
+
+    btnSliderEstadiosRight.addEventListener("click", function(){
+        SliderEstadiosSiguiente();
+    });
+
+    btnSliderGruposLeft.addEventListener("click", function(){
+        SliderGruposAtras();
+    });
+
+    btnSliderEstadiosLeft.addEventListener("click", function(){
+        SliderEstadiosAtras();
+    });
 
 });

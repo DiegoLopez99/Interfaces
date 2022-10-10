@@ -433,7 +433,7 @@ body{
 /* ---------- Estilos para Cards --------- */
 
 .card{
-    min-width: 435px; 
+    min-width: 35%; 
     height: 245px;
     position: relative;
     overflow: hidden;
@@ -442,7 +442,7 @@ body{
 }
 
 .cardGenero{
-    min-width: 250px; 
+    min-width: 20%; 
     height: 155px;
 }
 
@@ -844,6 +844,7 @@ footer{
 
 .displayJuego .displayInstruc .videoJuego:hover{
     background-color: #041c64;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.473);
 }
 
 .displayJuego .displayInstruc .instrucciones{
@@ -1019,6 +1020,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .imagenesJuego .cardImagenes h6{
@@ -1027,15 +1029,71 @@ footer{
     margin-bottom: 5px;
 }
 
+.imagenesJuego .cardImagenes .containerSlider{
+    overflow: hidden;
+    width: 380px;
+    height: 220px;
+    position: relative;
+}
+
 .imagenesJuego .cardImagenes .imagen{
     width: 380px;
     height: 220px;
 }
 
-.imagenesJuego .cardImagenes .imagen img{
+.imagenesJuego .cardImagenes .slider{
+    width: 800%;
+    height: 100%;
+    display: flex;
+    margin-left: -100%; 
+}
+
+.imagenesJuego .cardImagenes .containerSlider #sliderEstadios{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    margin-left: -100%;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderRigt,
+.imagenesJuego .cardImagenes .containerSlider .btnSliderLeft{
+    position: absolute;
+    border: none;
+    background-color: #CA1551;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    top: 40%;
+    line-height: 24px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 100;
+    transition: 300ms ease all;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderLeft{
+    left: 0;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderRigt{
+    right: 0;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .slider .imagenSliderEstadios{
     width: 100%;
     height: 100%;
 }
+
+.imagenesJuego .cardImagenes .imagen img,
+.imagenesJuego .cardImagenes .containerSlider .slider img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 
 .seccionComentarios{
     width: 100%;
@@ -1204,14 +1262,14 @@ footer{
 
 .seccionComentarios .comentariosComunidad .comentario .contenidoComentario h6{
     color: #fff;
-    font-size: 14px;
-    margin-top: 4px;
+    font-size: 16px;
+    margin-top: 2px;
 }
 
 .seccionComentarios .comentariosComunidad .comentario .contenidoComentario p{
     color: #fff;
-    font-size: 13px;
-    margin-top: 5px;
+    font-size: 14px;
+    margin-top: 3px;
 }
 
 
