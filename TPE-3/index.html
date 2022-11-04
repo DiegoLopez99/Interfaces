@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/e8e83e6023.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
+    <title>DL Games</title>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="spinner">
+            <span>Cargando...</span>
+        </div>
+        <div class="barraCarga">
+        </div>
+    </div>
+    <div class="containerSitio" id="containerSitio">
+        <header>
+            <div class="containerNavbar">
+                <div class="logo">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h6 class="tituloLogo">DL Games</h6>   
+                </div>
+                <div class="barraBusqueda">
+                    <input type="text" name="" placeholder="Buscar Juego">
+                    <div class="btnBuscar">
+                        <i class="fa-solid fa-magnifying-glass iconoBuscar"></i>
+                    </div>
+                </div>
+                <div class="containerMenu">
+                    <div class="btnMenu">
+                        <i class="fa-solid fa-bars" id="iconoMenu"></i>
+                    </div>
+                    <div class="menu">
+                        <div class="usuario">
+                            <div class="avatarUsuario">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="descripcionUsuario">
+                                <p class="nombreUsuario">Diego Lopez</p>
+                                <a href="#">Configurar Perfil</a>
+                            </div>
+                        </div>
+                        <div class="navegacion">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="#">Mis Juegos</a></li>
+                                <li><a href="#">Categorias</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="Proximo-estreno.html">Novedades</a></li>
+                                <li><a href="#" class="cerrarCesion">Cerrar Cesion</a></li>
+                            </ul>
+                        </div>
+                        <div class="redesSociales">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="containerInicio">
+            <div class="containerProxEstreno">
+                <img src="img/Proximo estreno/fondo3.jpg" alt="">
+                <div class="filtro"></div>
+                <div class="imagenProtagonistas">
+                    <img src="img/Proximo estreno/para-png.png" alt="">
+                </div>
+                <div class="imagenLogo">
+                    <img src="img/Proximo estreno/Logo.png" alt="">
+                </div>
+                <div class="filtroHover"></div>
+                <div class="descripcion">
+                    <a href="Proximo-estreno.html"><h1>Proximamente Disponible!</h1></a>
+                    <a href="Proximo-estreno.html">Leer mas...</a>
+                </div>
+            </div>
+            <div class="recomendadoParaTi">
+                <div class="titulo">
+                    <h4>Recomendado Para Ti</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card">
+                                <a href="#"><img src="img/Pagina Juego/4 en linea world cup.jpg" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>World Cup 2022</h6>
+                                    <a href="pag-juego.html">Jugar <i class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Agent P-Rebel Spy.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Agente P: Rebel Spy</h6>
+                                    <a href=""#">Jugar <i class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Ben 10 World Rescue.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Ben 10: World Rescue</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Cars Driver.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Cars Driver</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Jump Jousts.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Jump Joust</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Skate Hooligans.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Skate Hooligans</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <a href="#"><img src="img/Images Carrusel Des/Zombie Mission 3.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Zombie Mission 3</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Deportes</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Head Soccer.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Head Soccer</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Baseball Classic.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Baseball Classic</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/8 Ball Billiard Pool.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>8 Ball Pool</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Basketbal Stars.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Basketball Stars</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Gumball Strike.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Gumball Strike</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Basketball Strike.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Basketball Strike</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Just Golf.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Just Golf</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Penalty Challenge.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Penalty Challenge</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Real Chess.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Real Chess</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Deportes/Table Tennis.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Table Tennis</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Aventura</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/The Legendary Trials.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>The Legendary Tri...</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Sonic Wings Rush.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Sonic Wings Rush</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Adam and Eve GO.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Adam and Eve</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Idle Arks.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Idle Arks</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Among Us.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Among Us</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Jungle Dino Hunter.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Jungle Dino Hunter</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Minecarft Remake.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Minecarft Remake</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Quad Bike Simulator.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Quad Bike Simu...</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Super Mario Run 2.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Super Mario Run</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Aventura/Super Onian Boy.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Super Onian Boy</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Disparos</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Army FPS Shooting.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Army Shooting</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/CAD War 4.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>CAD War 4</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Commando Sniper.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Commando Sniper</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Infinity Battlefield.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Infinity Battlefield</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Krunker.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Krunker</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Lara Croft Tomb Raider.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Lara Croft Tomb...</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Mafia Agent.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Mafia Agent</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Masked Forces Unlimited.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Masked Force</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Wild Hunter Sniper.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Wild Hunter Sniper</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos Disparos/Zombie Mission 4.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Zombie Mission 4</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Animales</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Anngry Birds.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Angry Birds</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Fish Eat Fish.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Fish Eat Fish</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Frenzie Chicken Farm.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Frenzie Chicken</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Horse Rider.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Horse Rider</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Merge Cannon.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Merge Cannon</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Monkey Bridge.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Monkey Bridge</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Panda Fight.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Panda Fight</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Scooby Doo.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Scooby Doo</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Snail Bob.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Snail Bob</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Animales/Veggie Patch.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Veggie Patch</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Peleas</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Body Builder Ring.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Body Builder Ring</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Boxing Starts.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Boxing Starts</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Drunken Boxing.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Drunken Boxing</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Finn & Bones.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Finn & Bones</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Drunken Duel.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Drunken Duel</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Squid Battle Simulator.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Squid Battle</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Stickman Fighter.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Stickman Fighter</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Street Fighter 2.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Street Fighter 2</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Sumo Battle.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Sumo Battle</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juego de Peleas/Super Dino Fighter.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Super Dino Fighter</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Autos</h4>
+                </div>
+                <div class="carrusel">
+                    <button class="btnScrollIzq" id="btnScrollIzq" role="button"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Bus Simulator.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Bus Simulator</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Cars Driver.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Cars Driver</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/City Stunt Driver.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>City Stunt Driver</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/London Taxi Driver.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>London Taxi Driver</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Mad Truck Challenge.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Mad Truck Chal...</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Monster Truck Racing.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Monster Truck</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Racing Cars.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Racing Cars</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Realistic Cars.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Realistic Cars</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Stunt Racers Extreme.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Racers Extreme</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Autos/Supercars Race.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>SuperCars Race</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btnScrollDer" id="btnScrollDer" role="button"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+            <div class="JuegosGenero">
+                <div class="titulo">
+                    <h4>Juegos de Superheroes</h4>
+                </div>
+                <div class="carrusel">
+                    <button role="button" class="btnScrollIzq" id="btnScrollIzq"><i class="fa-solid fa-angle-left"></i></button>
+                    <div class="containerCarrusel">
+                        <div class="contCards">
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Avengers-Hydra Dash.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Avengers-Hydra</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$150</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Batman Combat.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Batman Combat</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Black Panter.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Black Panter</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$200</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Captain America.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Captain America</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Batman- Street Force.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Batman Street Fo...</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$250</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Hero Time-Ben 10.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Hero Time: Ben 10</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Hulk Puzzle Collection.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Hulk Puzzle</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Power Tower.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>Power Tower</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/Spider-Man.png" alt=""></a>
+                                <div class="capa">
+                                    <h6>Spider-Man</h6>
+                                    <div class="agregarCarrito">
+                                        <p>$100</p>
+                                        <button>Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card cardGenero">
+                                <a href="#"><img src="img/Juegos de Superheroes/SuperMan Nuclear Rescue.png" alt=""></a>
+                                <div class="etiquetaGratis"><p>Gratis</p></div>
+                                <div class="capa">
+                                    <h6>SuperMan Nuclear</h6>
+                                    <button>Jugar <i class="fa-solid fa-play"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button role="button" class="btnScrollDer" id="btnScrollDer"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="contcardsFooter">
+                <div class="cardFooter">
+                    <div class="imgFooter">
+                        <img src="img/Imagenes Footer/Imagen1.png" alt="">
+                    </div>
+                    <div class="descripcionCard">
+                        <div class="titulo">
+                            <h5>Navegacion del Sitio</h5>
+                        </div>
+                        <div class="descripcion">
+                            <ul>
+                                <li><a href="">Inicio</a></li>
+                                <li><a href="">Mis Juegos</a></li>
+                                <li><a href="">Categorias</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Novedades</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFooter">
+                    <div class="imgFooter">
+                        <img src="img/Imagenes Footer/imagen2.png" alt="">
+                    </div>
+                    <div class="descripcionCard">
+                        <div class="titulo">
+                            <h5>Blog</h5>
+                        </div>
+                        <div class="descripcion">
+                            <p>Mantene al dia con las ultimas noticias en nustro blog</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFooter">
+                    <div class="imgFooter">
+                        <img src="img/Imagenes Footer/imagen3.png" alt="">
+                    </div>
+                    <div class="descripcionCard">
+                        <div class="titulo">
+                            <h5>Redes Sociales</h5>
+                        </div>
+                        <div class="descripcion">
+                            <p>Siguenos en nuestras redes sociales</p>
+                            <div class="iconosRedesSociales">
+                                <i class="fa-brands fa-instagram"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-facebook"></i>
+                                <i class="fa-brands fa-discord"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardFooter">
+                    <div class="imgFooter">
+                        <img src="img/Imagenes Footer/imagen4.png" alt="">
+                    </div>
+                    <div class="descripcionCard">
+                        <div class="titulo">
+                            <h5>Necesitas Ayuda?</h5>
+                        </div>
+                        <div class="descripcion">
+                            <p>Comunicate con nosotros a traves de nuestro correo electronico y solucionaremos tu consulta.</p>
+                            <p class="correo"><i class="fa-regular fa-envelope"></i> DLgames@gamil.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

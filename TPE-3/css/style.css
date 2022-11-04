@@ -1,0 +1,1913 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #1C45B4;
+}
+
+/* ------------- Loader ------------ */
+
+.loader{
+    display: flex;  
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #072064;
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.spinner:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+    animation: rotar 2s linear infinite;
+}
+
+.spinner span{
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 2s ease-in-out infinite;
+}
+
+.barraCarga{
+    width: 200px;
+    height: 20px;
+    background-color: #0E36A0;
+    margin-top: 300px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.barraCarga:before{
+    content: '';
+    position: absolute;
+    background-color: #18b201;
+    width: 0;
+    height: 20px;
+    border-radius: 20px;
+    animation: barraCarga 5s infinite;
+}
+
+@keyframes rotar{
+    0%{
+        transform: rotate(0deg);
+        /*box-shadow: 1px 5px 2px #f86400;*/
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    50%{
+        transform: rotate(180deg);
+        /*box-shadow: 1px 5px 2px #ecf002;*/
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    100%{
+        transform: rotate(360deg);
+        /*box-shadow: 2px 6px 3px #a704c8;*/
+        box-shadow: 1px 5px 2px #18b201;
+    }
+}
+
+@keyframes text {
+    50%{
+        color: #072064
+        
+    }
+}
+
+@keyframes barraCarga {
+    100%{
+        width: 100%;
+    }
+}
+
+.cerrarLoader{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    animation: all 500ms;
+}
+
+/*---- Inicio ------*/
+.containerSitio{
+    display: none;
+}
+
+.activarSitio{
+    display: block;
+}
+
+
+/*-------------- Estilos para el Navbar -------------*/
+
+.containerNavbar{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #08287C;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.253);
+    padding-left: 40px;
+    padding-right: 15px;
+}
+
+.containerNavbar .logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #CA1551;
+    transition: all 300ms;
+}
+
+.containerNavbar .logo h6{
+    font-size: 24px;
+    font-family: 'Pacifico', cursive;
+    margin-left: 4px;
+}
+
+.containerNavbar .logo i{
+    font-size: 52px;
+}
+
+.logo:hover{
+    color: #7C002A;
+}
+
+.barraBusqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 35px;
+    transform: translateX(-30px);
+    background-color: #1C45B4;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+
+.barraBusqueda input{
+    margin-left: 15px;
+    font-size: 14px;
+    outline: none;
+    background: none;
+    color: #fff;
+    width: 240px;
+    float: left;
+}
+
+.barraBusqueda input::placeholder{
+    color: #5986FF;
+}
+
+.btnBuscar{
+    margin-left: 10px;
+    height: 34px;
+    width: 40px;
+    background-color: #1C45B4;
+    text-align: center;
+    line-height: 35px;
+    color: #5986FF;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left: solid 1px #5986FF;
+    transition: all 500ms;
+    cursor: pointer;
+    float: inline-end;
+}
+
+.btnBuscar:hover{
+    background-color: #072064;
+    border-left: none;
+    color: #ffff;
+    
+}
+
+/*.containerMenu{
+    margin-left: 37%;
+}*/
+
+.btnMenu{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1C45B4;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 26px;
+    transition: all 500ms;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+
+.btnMenu:hover{
+    background-color: #072064;
+}
+
+.menu{
+    width: 255px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #08287C;
+    opacity: 0;
+    display: none;
+    z-index: 500;
+}
+
+.activar{
+    opacity: 1;
+    display: block;
+}
+
+.usuario{
+    display: flex;
+}
+
+.avatarUsuario{
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 12px;
+    background-color: #FCFF58;
+    color: black;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombreUsuario{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.descripcionUsuario{
+    margin-top: 15px;
+}
+
+.descripcionUsuario a{
+    color: white;
+    font-size: 14px;
+    transition: all 300ms;
+}
+
+.descripcionUsuario a:hover{
+    color: #8488FF;
+}
+
+
+.navegacion{
+    border-top: solid 1px #0E36A0;
+    border-bottom: solid 1px #0E36A0;
+}
+.navegacion ul li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+    transition: all 300ms;
+    margin-left: 6px;
+}
+
+.navegacion ul li a:hover{
+    color: #8488FF;
+}
+
+.navegacion .cerrarCesion{
+    border-top: solid 1px #0E36A0;
+    margin-left: 0px;
+    padding-left: 18px;
+}
+
+.redesSociales{
+    display: flex;
+    justify-content: space-between;
+}
+
+.redesSociales i{
+    color: #fff;
+    font-size: 32px;
+    padding: 13px;
+    margin: 2px;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.redesSociales i:hover{
+    transform: scale(1.15);
+}
+
+/*-------------- Seccion Proximo estreno Inicio -------------*/
+
+.containerInicio{
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.containerProxEstreno{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.containerProxEstreno img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    box-shadow: 0, 0, 4px, rgba(0, 0, 0, 0.253);
+}
+
+.containerProxEstreno .filtro{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.containerProxEstreno .imagenProtagonistas{
+    position: absolute;
+    height: 115%;
+    width: 35%;
+    z-index: 5;
+    top: 0;
+    right: 0;
+}
+
+.containerProxEstreno .imagenProtagonistas img{
+    width: 100%;
+    height: 100%;
+}
+
+.containerProxEstreno .imagenLogo{
+    width: 45%;
+    height: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.containerProxEstreno .imagenLogo img{
+    width: 100%;
+    height: 100%;
+}
+
+.containerProxEstreno .filtroHover{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.527);
+    opacity: 0;
+    visibility: hidden;
+    animation: all 400ms;
+}
+
+.containerProxEstreno:hover > .filtroHover{
+    opacity: 1;
+    visibility: visible;
+}
+
+.containerProxEstreno .descripcion{
+    width: 55%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 35px;
+    margin-bottom: 20px;
+    z-index: 110;
+}
+
+.containerProxEstreno .descripcion h1{
+    color: #fff;
+    font-size: 48px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.containerProxEstreno .descripcion a{
+    color: #fff;
+    font-size: 36px;
+}
+
+.containerProxEstreno:hover > .descripcion{
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* ---------- Estilos para Cards --------- */
+
+.card{
+    min-width: 35%; 
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.cardGenero{
+    min-width: 20%; 
+    height: 155px;
+}
+
+
+.card a img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+}
+
+.card .capa{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.863);
+    color: #fff;
+    transition: all 400ms ease-out;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card .capa h6{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.cardGenero .capa h6{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card .capa .agregarCarrito{
+    display: flex;
+}
+
+.card .capa .agregarCarrito button{
+    padding: 5px 15px;
+    background-color: #27BF17;
+    font-size: 16px;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.cardGenero .capa .agregarCarrito button{
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+
+.card .capa .agregarCarrito p{
+    font-size: 20px;
+    padding: 4px;
+}
+
+.cardGenero .capa .agregarCarrito p{
+    font-size: 16px;
+}
+
+.card .capa button{
+    padding: 10px 25px;
+    background-color: #27BF17;
+    font-size: 18px;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.card .capa a{
+    padding: 10px 25px;
+    background-color: #27BF17;
+    font-size: 18px;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+.cardGenero .capa button{
+    padding: 6px 20px;
+    font-size: 16px;
+}
+
+.card .etiquetaGratis{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: -33px;
+}
+
+.card .etiquetaGratis p{
+    color: #fff;
+    padding: 3px 45px;
+    background-color: #27BF17;
+    transform: rotate(35deg);
+}
+
+.card .capa button:hover{
+    background-color: #0B7800;
+}
+
+.card .capa a:hover{
+    background-color: #0B7800;
+}
+
+.card:hover >.capa{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover >  a img{
+    transform: scale(1.1);
+}
+
+.card .capa .agregarCarrito button:hover{
+    background-color: #0B7800;
+}
+
+/* ---------- Carrusel ------------ */
+
+.recomendadoParaTi{
+    background-color: #072064;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.JuegosGenero{
+    background-color: #072064;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titulo h4{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.carrusel,
+.carruselEscenarios{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.carrusel .btnScrollIzq,
+.carrusel .btnScrollDer,
+.carruselEscenarios .btnScrollDerecha,
+.carruselEscenarios .btnScrollIzquierda{
+    position: absolute;
+    border: none;
+    background-color: #CA1551;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    top: calc(50%-25%);
+    line-height: 24px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 100;
+    transition: 300ms ease all;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+
+
+.carrusel .btnScrollIzq:hover,
+.carrusel .btnScrollDer:hover,
+.carruselEscenarios .btnScrollDerecha:hover,
+.carruselEscenarios .btnScrollIzquierda:hover{
+    background-color: #9E0A3C; 
+}
+
+.carrusel .btnScrollIzq,
+.carruselEscenarios .btnScrollIzquierda{
+    left: 0;
+    margin-left: -25px;
+}
+
+.carrusel .btnScrollDer,
+.carruselEscenarios .btnScrollDerecha{
+    right: 0;
+    margin-right: -25px;
+}
+
+.containerCarrusel,
+.carruselEscenarios .containerCarruselEscenarios{
+    width: 100%;
+    padding: 5px 0px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.containerCarrusel .contCards,
+.containerCarruselEscenarios .containerImagenes{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* ------- Footer -------*/
+
+footer{
+    width: 100%;
+    height: 420px;
+    background-color: #08287C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.253);
+}
+
+.contcardsFooter{
+    display: flex;
+    width: 88%;
+    margin: auto;
+    margin-top: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardFooter{
+    width: 240px;
+    height: 300px;
+    border: solid 4px #021344;
+    background-color: #1C45B4;
+    position: relative;
+    border-radius: 10px;
+    transition: all 300ms ease-out;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.527);
+}
+
+.cardFooter .imgFooter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    margin-top: -90px;
+}
+
+.cardFooter .imgFooter img{
+    width: 130%;
+    height: 300px;
+    object-fit: fill;
+    margin-left: -38px;
+    transition: all 300ms ease-out;
+}
+
+.cardFooter .descripcionCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 102%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #021344;
+    margin-bottom: -2px;
+    margin-left: -2px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 300ms ease-out;
+}
+
+
+.cardFooter .descripcionCard .titulo{
+    color: #fff;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.cardFooter .descripcionCard .descripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+}
+
+.cardFooter .descripcionCard .descripcion a,
+.cardFooter .descripcionCard .descripcion p{
+    color: #fff;
+    font-size: 14px;
+    transition: all 300ms;
+}
+
+.cardFooter .descripcionCard .descripcion a:hover{
+    color: #8488FF;
+}
+
+.cardFooter:hover > .imgFooter img{
+    transform: translateY(-15px);
+}
+
+.cardFooter:hover > .descripcionCard{
+    background-color: #072064;
+}
+
+.cardFooter:hover{
+    border: solid 4px #072064;
+}
+
+.cardFooter .descripcionCard .descripcion .iconosRedesSociales{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+}
+
+.cardFooter .descripcionCard .descripcion .iconosRedesSociales i{
+    font-size: 32px;
+    color: #fff;
+    transition: all 200ms;
+}
+
+.cardFooter .descripcionCard .descripcion .iconosRedesSociales i:hover{
+    color: #8488FF;
+    transform: scale(1.2);
+}
+
+.cardFooter .descripcionCard .descripcion .correo {
+    font-size: 13px;
+    margin-top: 10px;
+    transition: all 300ms;
+}
+
+.cardFooter .descripcionCard .descripcion .correo:hover{
+    color: #8488FF;
+}
+
+/*-------- Pagina de Juego ---------*/
+
+.containerPagJuego{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.breadcrumb{
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb a{
+    color: #fff;
+    font-size: 14px;
+    transition: all 300ms;
+}
+
+.breadcrumb a:hover{
+    color: #8488FF;
+}
+
+.breadcrumb i{
+    color: #fff;
+    font-size: 15px;
+    margin-top: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.displayJuego{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.displayJuego .displayInstruc{
+    width: 100%;
+    display: flex;
+}
+
+.displayJuego .displayInstruc .videoJuego{
+    width: 76%;
+    background-color: #08287C;
+    border-radius: 20px;
+    margin-right: 1%;
+    display: flex;
+    transition: all 500ms;
+    position: relative;
+}
+
+.displayJuego .displayInstruc .videoJuego:hover{
+    background-color: #041c64;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.473);
+}
+
+.displayJuego .displayInstruc .instrucciones{
+    width: 23%;
+    background-color: #08287C;
+    border-radius: 20px;
+}
+
+.displayJuego .displayInstruc .videoJuego .video{
+    width: 77%;
+    border-radius: 15px;
+    height: 450px;
+    margin: 15px;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+.displayJuego .displayInstruc .videoJuego .video img{
+    width: 100%;
+    height: 100%;
+}
+
+.displayJuego .displayInstruc .videoJuego .seccionPlay{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding: 15px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.displayJuego .displayInstruc .videoJuego .seccionPlay h3{
+    font-size: 24px;
+}
+
+.displayJuego .displayInstruc .videoJuego .seccionPlay h5{
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 5px;
+}
+
+.displayJuego .displayInstruc .videoJuego .seccionPlay button{
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #27BF17;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.displayJuego .displayInstruc .videoJuego .seccionPlay button:hover{
+    background-color: #0B7800;
+}
+
+.displayJuego .displayInstruc .instrucciones h4{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.displayJuego .displayInstruc .instrucciones ul{
+    width: 82%;
+    margin: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.displayJuego .displayInstruc .instrucciones ul li{
+    list-style: disc;
+    color: #fff;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.displayJuego .socialJuego{
+    display: flex;
+    width: 76%;
+    height: 50px;
+    background-color: #08287C;
+    border-radius: 15px;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.displayJuego .socialJuego .btnSocial{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.displayJuego .socialJuego .btnSocial i{
+    font-size: 28px;
+    
+}
+
+.displayJuego .socialJuego .btnSocial p{
+    
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.activarMG{
+    color: #25a711;
+}
+
+.activarNoMG{
+    color: #bd1414;
+}
+
+.activarFavorito{
+    color: #c2bf10;
+}
+
+.displayJuego .socialJuego .btnSocial:hover > i,
+.displayJuego .socialJuego .btnSocial:hover > p{
+    color: #8488FF;
+}
+
+.containerPagJuego .contDescripcionJuego{
+    width: 100%;
+    display: flex;
+    background-color: #08287C;
+    border-radius: 20px;
+    margin-top: 10px;
+
+}
+
+.contDescripcionJuego .descripcion{
+    width: 55%;
+    color: #fff;
+    padding: 20px;
+}
+
+.contDescripcionJuego .descripcion h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contDescripcionJuego .descripcion p{
+    font-size: 15px;
+}
+
+.contDescripcionJuego .descripcion h3{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contDescripcionJuego .imagenesJuego{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.imagenesJuego .cardImagenes{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.imagenesJuego .cardImagenes h6{
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.imagenesJuego .cardImagenes .containerSlider{
+    overflow: hidden;
+    width: 380px;
+    height: 220px;
+    position: relative;
+}
+
+.imagenesJuego .cardImagenes .imagen{
+    width: 380px;
+    height: 220px;
+}
+
+.imagenesJuego .cardImagenes .slider{
+    width: 800%;
+    height: 100%;
+    display: flex;
+    margin-left: -100%; 
+}
+
+.imagenesJuego .cardImagenes .containerSlider #sliderEstadios{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    margin-left: -100%;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderRigt,
+.imagenesJuego .cardImagenes .containerSlider .btnSliderLeft{
+    position: absolute;
+    border: none;
+    background-color: #CA1551;
+    font-size: 24px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    top: 40%;
+    line-height: 24px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 100;
+    transition: 300ms ease all;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderLeft{
+    left: 0;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .btnSliderRigt{
+    right: 0;
+}
+
+.imagenesJuego .cardImagenes .containerSlider .slider .imagenSliderEstadios{
+    width: 100%;
+    height: 100%;
+}
+
+.imagenesJuego .cardImagenes .imagen img,
+.imagenesJuego .cardImagenes .containerSlider .slider img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.seccionComentarios{
+    width: 100%;
+    background-color: #08287C;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.seccionComentarios .titulo{
+    margin-left: 35px;
+    margin-top: 25px;
+}
+
+.seccionComentarios .titulo h2{
+    color: #fff;
+    font-size: 24px;
+    padding-top: 13px;
+}
+
+.seccionComentarios .miComentario{
+    width: 100%;
+    margin-left: 25px;
+    margin-top: 25px;
+    display: flex;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario{
+    margin-left: 10px;
+    width: 500px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input{
+    position: relative;
+    width: 100%;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input{
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: solid 2px #1C45B4;
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input::placeholder{
+    color: #1C45B4;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input .underline{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input .underline::before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .input input:focus ~ .underline::before{
+    transform: scaleX(1);
+}
+
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .cancelar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 5px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .comentar{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: none;
+    border: 3px solid #0B7800;
+    color: #0B7800;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .mostrarBotones{
+    opacity: 1;
+    visibility: visible;
+}
+
+.seccionComentarios .miComentario .conteidoFormulario .botonesComentario .activarBtn{
+    background-color: #0B7800;
+    color: #fff;
+}
+
+
+.seccionComentarios .avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FCFF58;
+}
+
+.seccionComentarios .avatar i{
+    font-size: 26px;
+}
+
+.seccionComentarios #avatar1{
+    background-color: #FF5858;
+}
+
+.seccionComentarios #avatar2{
+    background-color: #F258FF;
+}
+
+.seccionComentarios #avatar3{
+    background-color: #58FFFF;
+    margin-bottom: 25px;
+}
+
+.seccionComentarios .comentariosComunidad{
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-top: 25px;
+    border-top: solid 4px #1C45B4;
+}
+
+.seccionComentarios .comentariosComunidad .comentario{
+    display: flex;
+    margin-top: 25px;
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario{
+    margin-left: 8px
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario h6{
+    color: #fff;
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.seccionComentarios .comentariosComunidad .comentario .contenidoComentario p{
+    color: #fff;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+
+/* ------- Pagina proximo estreno -------- */
+
+.contProxEstreno{
+    width: 100%;
+
+}
+
+.contProxEstreno .breadcrumb{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.contProxEstreno .imagenPrincipal{
+    width: 100%;
+    height: 780px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contProxEstreno .imagenPrincipal .fondoImagen{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .fondoImagen img{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .filtroFondo{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.466);
+}
+
+
+.contProxEstreno .imagenPrincipal .logo{
+    width: 715px;
+    height: 235px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.contProxEstreno .imagenPrincipal .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .imagenPersonajes{
+    height: 1050px;
+    width: 850px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -70px;
+    margin-right: -50px;
+}
+
+.contProxEstreno .imagenPrincipal .imagenPersonajes img{
+    width: 100%;
+    height: 100%;
+}
+
+.contProxEstreno .imagenPrincipal .callToAction{
+    width: 650px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.contProxEstreno .imagenPrincipal .callToAction h1{
+    font-size: 48px;
+    color: #fff;
+}
+
+.contProxEstreno .imagenPrincipal .callToAction h3{
+    font-size: 28px;
+    color: #fff;
+    font-weight: lighter;
+    margin-top: 15px;
+}
+
+.contProxEstreno .imagenPrincipal .callToAction button{
+    font-size: 30px;
+    color: #fff;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #CA1551;
+    border-radius: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.contProxEstreno .imagenPrincipal .callToAction button:hover{
+    background-color: #9E0A3C;
+}
+
+
+
+.cardPersonajesPrincipales{
+    width: 100%;
+    background-color: #08287C;
+
+}
+
+.cardPersonajesPrincipales .titulo,
+.cardNuevosPersonajes .titulo,
+.escenariosJuego .titulo,
+.descripcionProximoEstreno .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardPersonajesPrincipales .titulo h2,
+.cardNuevosPersonajes .titulo h2,
+.escenariosJuego .titulo h2,
+.descripcionProximoEstreno .titulo h2{
+    color: #fff;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 45px;
+    margin-top: 45px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes{
+    width: 260px;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    /*box-shadow: rgba(0, 0, 0, 0.445) 0px 5px 15px;*/
+    box-shadow: rgba(0, 0, 0, 0.534) 0px 3px 8px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .imagen{
+    width: 100%;
+    height: 86%;
+    transition: all 500ms ease-in-out;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades{
+    width: 100%;
+    height: 270px;
+    background-color: #021344;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    margin-top: 295px;
+    transition: all 500ms ease-in-out;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades h5{
+    color: #fff;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades ul{
+   padding: 15px;
+   padding-left: 30px;
+   padding-top: 5px;
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes .habilidades ul li{
+    color: #fff;
+    list-style: disc;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes:hover > .imagen{
+    transform: translateY(-200px);
+}
+
+.cardPersonajesPrincipales .cardsPersonajes .cardPersonajes:hover > .habilidades{
+    transform: translateY(-200px);
+}
+
+.cardNuevosPersonajes{
+    width: 100%;
+    background-color: #021344;
+}
+
+.cardsNuevosPersonajes{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 45px;
+    margin-top: 45px;
+}
+
+.cardsNuevosPersonajes .cardNuevoPersonaje{
+    width: 260px;
+    height: 360px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.534) 0px 3px 8px;
+}
+
+.cardsNuevosPersonajes .imagen{
+    width: 100%;
+    height: 100%;
+}
+
+.cardsNuevosPersonajes .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardsNuevosPersonajes .descripcion{
+    position: absolute;
+    bottom: 0;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background: linear-gradient(to top, black, rgba(0,0,0,0));
+    opacity: 0;
+    transition: all 400ms ease-out;
+}
+
+.cardsNuevosPersonajes .descripcion h4{
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cardsNuevosPersonajes .cardNuevoPersonaje:hover > .descripcion{
+    opacity: 1;
+}
+
+.escenariosJuego{
+    width: 100%;
+    background-color: #08287C;
+}
+
+.escenariosJuego .imagenesEscenarios{
+    width: 85%;
+    margin: auto;
+    padding-bottom: 35px;
+    padding-top: 30px;
+}
+
+.carruselEscenarios .containerCarruselEscenarios .containerImagenes .imagen{
+    min-width: 33%;
+    height: 300px;
+    margin-right: 5px;
+    transition: all 400ms ease-out;
+}
+
+.carruselEscenarios .containerCarruselEscenarios .containerImagenes .imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.descripcionProximoEstreno{
+    width: 100%;
+    background-color: #021344;
+    margin-bottom: 30px;
+}
+
+.descripcionProximoEstreno .texto{
+    padding: 35px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.descripcionProximoEstreno .texto p{
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* ------- querie Mobile ------- */
+
+
+@media only screen and (max-width: 768px){
+
+    .containerNavbar{
+        height: 60px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .containerNavbar .logo h6{
+        font-size: 24px;
+        margin-left: 4px;
+    }
+    
+    .containerNavbar .logo i{
+        font-size: 52px;
+    }
+
+    .barraBusqueda{
+        display: none;
+    }
+
+    .btnMenu{
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+
+    .menu{
+        width: 100%;
+        top: 60px;
+    }
+    
+    .nombreUsuario{
+        font-size: 18px;
+        margin-top: 3px;
+    }
+    
+    .descripcionUsuario{
+        margin-top: 10px;
+    }
+    
+    .descripcionUsuario a{
+        font-size: 16px;
+    }
+
+    .navegacion ul li a{
+        font-size: 22px;
+    }
+    
+    .redesSociales{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .redesSociales i{
+        font-size: 42px;
+    }
+
+    .containerInicio{
+        width: 97%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .containerProxEstreno{
+        width: 100%;
+        height: 200px;
+    }
+
+    .containerProxEstreno .descripcion h1{
+        font-size: 18px;
+    }
+    
+    .containerProxEstreno .descripcion a{
+        font-size: 16px;
+    }
+
+    .containerProxEstreno .descripcion{
+        width: 60%;
+        margin-left: 12px;
+        margin-bottom: 10px;
+    }
+
+    .containerProxEstreno .imagenProtagonistas{
+        height: 125%;
+        width: 45%;
+        margin-right: -15px;
+        margin-top: -10px;
+    }
+    
+    
+    .containerProxEstreno .imagenLogo{
+        width: 55%;
+    }
+
+    .card{
+        min-width: 150px; 
+        height: 160px;
+        border-radius: 5px;
+        margin-right: 0px;
+        margin-left: 3px;
+        position: relative;
+        scroll-snap-align: center;
+    }
+    
+    .cardGenero{
+        min-width: 100px; 
+        height: 130px;
+    }
+    
+    
+    .card a img{
+        width: 100%;
+        height: 60%;
+        border-radius: 5px;
+    }
+    
+    .card .capa{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 40%;
+        position: relative;
+        align-items: flex-start;
+        justify-content: flex-start;
+        opacity: 1;
+        visibility: visible;
+        background-color: #072064;
+        margin-top: -5px;
+    }
+    
+    .card .capa h6{
+        font-size: 12px;
+        margin-bottom: 1px;
+    }
+    
+    .cardGenero .capa h6{
+        font-size: 10px;
+        margin-bottom: 1px;
+    }
+    
+    .card .capa .agregarCarrito{
+        flex-direction: column;
+    }
+    .card .capa .agregarCarrito button{
+        padding: 2px 5px;
+        font-size: 10px;
+        border-radius: 3px;
+    }
+    
+    .cardGenero .capa .agregarCarrito button{
+        padding: 2px 5px;
+        font-size: 8px;
+    }
+    
+    
+    .card .capa .agregarCarrito p{
+        font-size: 10px;
+        padding: 0px;
+    }
+    
+    .cardGenero .capa .agregarCarrito p{
+        font-size: 8px;
+    }
+    
+    .card .capa button{
+        padding: 2px 8px;
+        font-size: 10px;
+        color: #fff;
+    }
+    
+    .card .capa a{
+        padding: 2px 8px;
+        font-size: 12px;
+    }
+    
+    .cardGenero .capa button{
+        padding: 2px 5px;
+        font-size: 8px;
+    }
+    
+    .card .etiquetaGratis{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 3px;
+        margin-right: -23px;
+    }
+    
+    .card .etiquetaGratis p{
+        color: #fff;
+        padding: 1px 25px;
+        font-size: 8px;
+        background-color: #27BF17;
+        transform: rotate(35deg);
+    }
+
+    .recomendadoParaTi{
+        margin-top: 10px;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 5px;
+    }
+    
+    .JuegosGenero{
+        background-color: #072064;
+        margin-top: 7px;
+        border-radius: 5px;
+        padding-top: 3px;
+        padding-bottom: 5px;
+    }
+    
+    .titulo h4{
+        font-size: 14px;
+        margin-left: 4px;
+    }
+
+    .containerCarrusel{
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    .carrusel .btnScrollIzq,
+    .carrusel .btnScrollDer{
+        display: none;
+    }
+
+    .containerCarrusel .contCards{
+        overflow-x: scroll;
+    }
+
+    .containerCarrusel .contCards::-webkit-scrollbar {
+        display: none;
+    }
+
+    footer{
+        height: auto;
+
+    }
+    
+    .contcardsFooter{
+        display: flex;
+        width: 98%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cardFooter{
+        width: 100px;
+        height: 120px;
+        padding: 4px;
+        border: none;
+        background-color: #021344;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+    
+    .cardFooter .imgFooter{
+        display: none;
+    }
+    
+    .cardFooter .descripcionCard{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    
+    
+    .cardFooter .descripcionCard .titulo{
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion{
+        width: 90%;
+        height: 100%;
+        justify-content: flex-start;
+    }
+    
+    .cardFooter .descripcionCard .descripcion a,
+    .cardFooter .descripcionCard .descripcion p{
+        font-size: 8px;
+
+    }
+    
+    .cardFooter .descripcionCard .descripcion .iconosRedesSociales{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1px;
+        padding-right: 1px;
+        margin-top: 5px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion .iconosRedesSociales i{
+        font-size: 20px;
+    }
+    
+    .cardFooter .descripcionCard .descripcion .correo {
+        font-size: 6px;
+        margin-top: 2px;
+    }
+
+    .cardFooter .descripcionCard .descripcion ul li{
+        height: 12px;
+    }
+    
+}
+
+.displayJuego .displayInstruc .videoJuego .canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
