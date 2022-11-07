@@ -21,8 +21,11 @@ class Ficha{
     }
 
     dibujarFicha(){
-        this.ctx.fillStyle = this.fill;
-        this.ctx.drawImage(this.imagen, this.posX - this.radio, this.posY - this.radio, this.tamanio, this.tamanio);
+        let img = this.imagen;
+        img.onload = ()=>{
+            /*this.ctx.fillStyle = this.fill;*/
+            this.ctx.drawImage(this.imagen, this.posX - this.radio, this.posY - this.radio, this.tamanio, this.tamanio);
+        }
     }
 
     setPosicion(x, y){

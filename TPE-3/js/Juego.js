@@ -20,15 +20,15 @@ addEventListener("DOMContentLoaded", (e) =>{
 
     let crearTablero = () =>{
         if(cantFichasGanar == 4){
-            tamanio = 70;
+            tamanio = 60;
             tablero = new Tablero(ctx, 6, 7, tamanio, cantFichasGanar);
         }
         else if(cantFichasGanar == 5){
-            tamanio = 50;
+            tamanio = 45;
             tablero = new Tablero(ctx, 7, 8, tamanio, cantFichasGanar);
         }
         else if(cantFichasGanar == 6){
-            tamanio = 40;
+            tamanio = 30;
             tablero = new Tablero(ctx, 8, 9, tamanio, cantFichasGanar);
         }
     };
@@ -63,7 +63,7 @@ addEventListener("DOMContentLoaded", (e) =>{
         if (ultimaFichaClicked != null) {
             ultimaFichaClicked.dibujarFicha();
         }
-        tablero.iniciarTablero(width*0.2);
+        tablero.iniciarTablero(width*0.3);
         diBujarNombreJugadores();
     };
 
@@ -186,7 +186,7 @@ addEventListener("DOMContentLoaded", (e) =>{
         generarFichasJugador(1, "./img/Fichas/"+seleccionJug1+".png", 30 + (Math.random() * 150));
         generarFichasJugador(2, "./img/Fichas/"+seleccionJug2+".png", (width-150) + (Math.random() * 150));
         tablero.setCantFichasGanar();
-        tablero.iniciarTablero(width*0.2);
+        tablero.iniciarTablero(width*0.3);
         tablero.iniciarMatriz();
         canvas.addEventListener('mousedown', onMouseDown, false);
         canvas.addEventListener('mouseup', onMouseUp, false);
