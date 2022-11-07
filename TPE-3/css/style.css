@@ -2007,7 +2007,8 @@ footer{
     margin-top: 10px;
 }
 
-.MenuInicioJuego .opciones .contBtnComenzar button{
+.MenuInicioJuego .opciones .contBtnComenzar button,
+.contenedorMenusJuego .menuReinicio button{
     font-size: 18px;
     padding: 6px 20px;
     background-color: #18b201;
@@ -2016,8 +2017,27 @@ footer{
     transition: all 300ms;
 }
 
-.MenuInicioJuego .opciones .contBtnComenzar button:hover{
+.MenuInicioJuego .opciones .contBtnComenzar button:hover,
+.contenedorMenusJuego .menuReinicio button:hover{
     background-color: #0B7800;
+}
+
+.contenedorMenusJuego .menuReinicio{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9E0A3C;
+    border-radius: 20px;
+    border: solid 6px #7C002A;
+    z-index: 500;
+    top: 200px;
+    left: 50%;
+    margin-left: -125px;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .contenedorMenusJuego .activar{

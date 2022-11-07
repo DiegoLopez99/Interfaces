@@ -42,7 +42,4 @@ class Jugador{
     addFicha(ficha){
         this.fichas.push(ficha);
     }
-
-
-
 }

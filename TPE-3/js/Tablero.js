@@ -9,10 +9,10 @@ class Tablero{
         this.cantFichasGanar = cantFichasGanar;
     }
 
-    iniciarTablero() {
+    iniciarTablero(widthJugador1) {
         for (let x = 0; x < this.columnas; x++) {
             for (let y = 0; y < this.filas; y++) {
-                let posX = (x * this.tamanio)  /* + lado jugador 1*/;
+                let posX = (x * this.tamanio) +  widthJugador1;
                 let posY = (y * this.tamanio) + 100;
                 let casillero = new Casillero();
                 casillero.addImage("./img/casillero.png", posX, posY, this.tamanio, this.ctx);
