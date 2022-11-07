@@ -9,6 +9,7 @@ class Tablero{
         this.cantFichasGanar = cantFichasGanar;
     }
 
+    //Inicia y dibuja el tablero
     iniciarTablero(widthJugador1) {
         for (let x = 0; x < this.columnas; x++) {
             for (let y = 0; y < this.filas; y++) {
@@ -20,6 +21,7 @@ class Tablero{
         }
     }
 
+    //inicia la matriz
     iniciarMatriz() {
         for (let x = 0; x < this.columnas; x++) {
             this.matriz[x] = [];
@@ -29,18 +31,19 @@ class Tablero{
         }
     }
 
+    //Checkea si hay ganador
     checkGanador(columna, fila, numJugador) {
         let total = -1;
         let f = fila;
         let c = columna;
 
-        //compruebo a derecha
+        //busca hacia la derecha
         while ((c < this.columnas) && (this.getFichaPosicion(c, f) == numJugador)) {
             total++;
             c++;
         }
 
-        //compruebo a izquierda
+        //busca hacia la izquierda
         f = fila;
         c = columna;
         while ((c >= 0) && (this.getFichaPosicion(c, f) == numJugador)) {
@@ -52,7 +55,7 @@ class Tablero{
             return numJugador;
         }
 
-        //compruebo altura
+        //busca por altura
         total = 0;
         f = fila;
         c = columna;
@@ -64,7 +67,7 @@ class Tablero{
             return numJugador;
         }
 
-        //diagonal de izquierda hacia abajo
+        //busca en diagonal de izquierda hacia abajo
         total = -1;
         f = fila;
         c = columna;
@@ -74,7 +77,7 @@ class Tablero{
             c--;
         }
 
-        //diagonal de derecha a arriba
+        //busca en diagonal de derecha a arriba
         f = fila;
         c = columna;
         while ((c < this.columnas) && (f < this.filas) && (this.getFichaPosicion(c, f) == numJugador)) {
@@ -86,7 +89,7 @@ class Tablero{
             return numJugador;
         }
 
-        //IZQ ARRIBA
+        //busca en diagonal izquierda a arriba
         total = -1;
         f = fila;
         c = columna;
@@ -96,7 +99,7 @@ class Tablero{
             c--;
         }
 
-        //DER ABAJO
+        //busca en diagonal derecha a abajo
         f = fila;
         c = columna;
         while ((c < this.columnas) && (f >= 0) && (this.getFichaPosicion(c, f) == numJugador)) {

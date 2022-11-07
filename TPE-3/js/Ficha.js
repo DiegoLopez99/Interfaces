@@ -16,14 +16,9 @@ class Ficha{
         return this.jugador;
     }
 
-    setFill(fill){
-        this.fill = fill;
-    }
-
     dibujarFicha(){
         let img = this.imagen;
         img.onload = ()=>{
-            /*this.ctx.fillStyle = this.fill;*/
             this.ctx.drawImage(this.imagen, this.posX - this.radio, this.posY - this.radio, this.tamanio, this.tamanio);
         }
     }

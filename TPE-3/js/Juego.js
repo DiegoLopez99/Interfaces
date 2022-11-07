@@ -18,7 +18,8 @@ addEventListener("DOMContentLoaded", (e) =>{
     let ganador = -1;
     let tamanio = 0;
 
-    let crearTablero = () =>{
+    //crea el tablero segun el modo de juego selecccionado
+    function crearTablero(){
         if(cantFichasGanar == 4){
             tamanio = 60;
             tablero = new Tablero(ctx, 6, 7, tamanio, cantFichasGanar);
@@ -33,12 +34,14 @@ addEventListener("DOMContentLoaded", (e) =>{
         }
     };
 
-    let agregarFicha = (ficha) => {
+    //agrega las fichas al arreglo
+    function agregarFicha(ficha){
         fichas.push(ficha);
         dibujarInicio();
     };
 
-    let generarFichasJugador = (numJugador, src, widthJugador) => {
+    //genera fichas de un jugador
+    function generarFichasJugador(numJugador, src, widthJugador){
         let cantFichasJugador = tablero.getCantidadFichas() /2;
         for (let i = 0; i <= cantFichasJugador; i++) {
             let img = crearImagen(src);
@@ -47,13 +50,15 @@ addEventListener("DOMContentLoaded", (e) =>{
         }
     };
 
-    let crearImagen = (src)=>{
+    //crea una imagen con el src que se le pasa por parametro
+    function crearImagen(src){
         let img = new Image();
         img.src = src;
         return img;
     };
 
-    let dibujarInicio = () => {
+    //dibuja la pantalla del juego
+    function dibujarInicio(){
         borrarCanvas();
         for (let i = 0; i < fichas.length; i++) {
             if (fichas[i] != ultimaFichaClicked) {
@@ -67,16 +72,18 @@ addEventListener("DOMContentLoaded", (e) =>{
         diBujarNombreJugadores();
     };
 
-    let borrarCanvas = () => {
+    function borrarCanvas(){
         ctx.fillStyle = '#FFF';
         ctx.fillRect(0, 0, width, height);
     };
 
-    let setJugadores = () =>{
+    //Setea los nombres de los jugadores
+    function setJugadores(){
         jugador1 = document.querySelector("#nombreJugador1").value;
         jugador2 = document.querySelector("#nombreJugador2").value;
     }
 
+    //busca el ultima ficha clickeada
     function buscarFichaClicked(x, y) {
         for (let i = 0; i < fichas.length; i++) {
             const ficha = fichas[i];
@@ -86,13 +93,18 @@ addEventListener("DOMContentLoaded", (e) =>{
         }
     };
 
-    let setGanador = (numJugador) => {
+    //dibuja el ganador
+    function setGanador(numJugador){
         ganador = numJugador;
         if (player == 1) {
-            
+            ctx.font = "100px Comic Sans MS";
+            ctx.fillStyle = "#000";
+            ctx.fillText(jugador1, 100, 100);
         }
         else {
-            
+            ctx.font = "100px Comic Sans MS";
+            ctx.fillStyle = "#000";
+            ctx.fillText(jugador2, 100, 100);
         }
     };
 
@@ -148,7 +160,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         }
     };
 
-    let cambiarTurno = () => {
+    //cambia el turno
+    function cambiarTurno(){
         if (turno == 1) {
             turno = 2;
         }
@@ -157,7 +170,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         }
     };
 
-    let reubicarUltimaFicha = () => {
+    //vuelve la ficha a su lugar de origen
+    function reubicarUltimaFicha(){
         if (ultimaFichaClicked != null) {
             ultimaFichaClicked.setFueJugada(false);
             ultimaFichaClicked.reiniciarPosicionesOrigen();
@@ -166,7 +180,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         dibujarInicio();
     };
 
-    let diBujarNombreJugadores = () => {
+    //dibuja los nombres de los jugadores
+    function diBujarNombreJugadores(){
         ctx.strokeStyle = "#FF0";
         ctx.font = "20px Comic Sans MS";
         ctx.fillStyle = "#000";
@@ -175,7 +190,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         ctx.fillText(jugador2, width-100, 25);
     }
 
-    let iniciarJuego = () => {
+    //Inicia el juego
+    function iniciarJuego(){
         filtro.classList.remove("activar");
         menuIncio.classList.remove("activar");
         let seleccionJug1 = document.querySelector("#seleccionJugador1").value;
@@ -194,7 +210,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         dibujarInicio();
     };
 
-    let reiniciarJuego = () => {
+    //Reinicia el juego
+    function reiniciarJuego(){
         ganador = -1;
         turno = 1;
         fichas = [];
@@ -206,7 +223,8 @@ addEventListener("DOMContentLoaded", (e) =>{
         reubicarUltimaFicha();
     };
 
-    let mostrarJuego = () => {
+    //Muestra el canvas y el menu de inicio
+    function mostrarJuego(){
         canvas.classList.add("mostrarCanvas");
         filtro.classList.add("activar");
         menuIncio.classList.add("activar");
