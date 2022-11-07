@@ -14,7 +14,7 @@ class Tablero{
             for (let y = 0; y < this.filas; y++) {
                 let posX = (x * this.tamanio)  /* + lado jugador 1*/;
                 let posY = (y * this.tamanio) + 100;
-                let casillero = new Rectangulo();
+                let casillero = new Casillero();
                 casillero.addImage("./img/casillero.png", posX, posY, this.tamanio);
             }
         }
@@ -127,7 +127,7 @@ class Tablero{
         return this.matriz[x][y];
     }
 
-    updateCantFichasGanar(){
+    setCantFichasGanar(){
         this.cantFichasGanar = document.querySelector('#cantFichasGanar').value;
     }
 

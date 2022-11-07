@@ -11,230 +11,279 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="js/main.js"></script>
     <script src="js/Juego.js"></script>
+    <script src="js/Ficha.js"></script>
+    <script src="js/Jugador.js"></script>
+    <script src="js/Tablero.js"></script>
+    <script src="js/Casillero.js"></script>
     <title>DL Games</title>
 </head>
 <body>
-    <header>
-        <div class="containerNavbar">
-            <div class="logo">
-                <i class="fa-solid fa-gamepad"></i>
-                <h6 class="tituloLogo">DL Games</h6>   
-            </div>
-            <div class="barraBusqueda">
-                <input type="text" name="" placeholder="Buscar Juego">
-                <div class="btnBuscar">
-                    <i class="fa-solid fa-magnifying-glass iconoBuscar"></i>
+    <div class="contenedorMenusJuego">
+        <div class="MenuInicioJuego">
+            <div class="jugadores">
+                <div class="jugador1">
+                    <label for="nombreJugador1">Nombre Jugador 1</label>
+                    <input type="text" id="nombreJugador1">
+                    <label for="seleccionJugador1">Elija su seleccion</label>
+                    <select name="seleccionJugador1" id="seleccionJugador1">
+                        <option value="argentina">Argentina</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="españa">España</option>
+                        <option value="francia">Francia</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="paises-bajos">Paises Bajos</option>
+                        <option value="portugal">Portugal</option>
+                    </select>
+                </div>
+                <div class="jugador2">
+                    <label for="nombreJugador2">Nombre Jugador 2</label>
+                    <input type="text" id="nombreJugador2">
+                    <label for="seleccionJugador1">Elija su seleccion</label>
+                    <select name="seleccionJugador1" id="seleccionJugador1">
+                        <option value="argentina">Argentina</option>
+                        <option value="alemania">Alemania</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="españa">España</option>
+                        <option value="francia">Francia</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="paises-bajos">Paises Bajos</option>
+                        <option value="portugal">Portugal</option>
+                    </select>
                 </div>
             </div>
-            <div class="containerMenu">
-                <div class="btnMenu">
-                    <i class="fa-solid fa-bars" id="iconoMenu"></i>
+            <div class="opciones">
+                <label for="cantFichasGanar">Seleccione el modo de juego</label>
+                <select name="cantFichasGanar" id="cantFichasGanar">
+                    <option value="4">4 fichas para ganar</option>
+                    <option value="5">5 fichas para ganar</option>
+                    <option value="6">6 fichas para ganar</option>
+                </select>
+                <button class="btnComenzar" id="btnComenzar">Comenzar</button>
+            </div>
+        </div>
+        <header>
+            <div class="containerNavbar">
+                <div class="logo">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h6 class="tituloLogo">DL Games</h6>   
                 </div>
-                <div class="menu">
-                    <div class="usuario">
-                        <div class="avatarUsuario">
-                            <i class="fa-regular fa-user"></i>
+                <div class="barraBusqueda">
+                    <input type="text" name="" placeholder="Buscar Juego">
+                    <div class="btnBuscar">
+                        <i class="fa-solid fa-magnifying-glass iconoBuscar"></i>
+                    </div>
+                </div>
+                <div class="containerMenu">
+                    <div class="btnMenu">
+                        <i class="fa-solid fa-bars" id="iconoMenu"></i>
+                    </div>
+                    <div class="menu">
+                        <div class="usuario">
+                            <div class="avatarUsuario">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <div class="descripcionUsuario">
+                                <p class="nombreUsuario">Diego Lopez</p>
+                                <a href="#">Configurar Perfil</a>
+                            </div>
                         </div>
-                        <div class="descripcionUsuario">
-                            <p class="nombreUsuario">Diego Lopez</p>
-                            <a href="#">Configurar Perfil</a>
+                        <div class="navegacion">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="#">Mis Juegos</a></li>
+                                <li><a href="#">Categorias</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="Proximo-estreno.html">Novedades</a></li>
+                                <li><a href="#" class="cerrarCesion">Cerrar Cesion</a></li>
+                            </ul>
+                        </div>
+                        <div class="redesSociales">
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-discord"></i>
                         </div>
                     </div>
-                    <div class="navegacion">
+                </div>
+            </div>
+        </header>
+        <div class="containerPagJuego">
+            <div class="breadcrumb">
+                <a href="index.html">Inicio</a>
+                <i class="fa-solid fa-angle-right"></i>
+                <a href="">Recomendado Para Ti</a>
+                <i class="fa-solid fa-angle-right"></i>
+                <a href="">World Cup 2022</a>
+            </div>
+            <div class="displayJuego">
+                <div class="displayInstruc">
+                    <div class="videoJuego" id="contenedorCanvas">
+                        <div class="video">
+                            <img src="img/Pagina Juego/4-en-linea-video.gif" alt="">
+                        </div>
+                        <div class="seccionPlay">
+                            <h3>World Cup 2022</h3>
+                            <h5>Elegi tu seleccion favorita y compite para la ganar la copa del mundo!</h5>
+                            <button id="btnPlay">Jugar <i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <canvas class="canvas" id="canvas"></canvas>
+                    </div>
+                    <div class="instrucciones">
+                        <h4>Instrucciones:</h4>
                         <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="#">Mis Juegos</a></li>
-                            <li><a href="#">Categorias</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="Proximo-estreno.html">Novedades</a></li>
-                            <li><a href="#" class="cerrarCesion">Cerrar Cesion</a></li>
+                            <li>Cada jugador elige su equipo.</li>
+                            <li>Comienza un jugador introduciendo una ficha en la columna elegida; luego lo hace el otro jugador y asi sucesivamente.</li>
+                            <li>El primero que haya conseguido tener cuatro fichas alineadas del mismo color y en forma horizontal, vertcial o diagonal es el ganador de la partida.</li>
+                            <li>Finalizada la partida, se reinicia el tablero y se comienza de nuevo.</li>
                         </ul>
                     </div>
-                    <div class="redesSociales">
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-discord"></i>
+                </div>
+                <div class="socialJuego">
+                    <div class="btnSocial" id="btnInteraccionJuego">
+                        <i class="fa-regular fa-thumbs-up" id="iconosInteraccionJuego"></i>
+                        <p>Me gusta</p>
+                    </div>
+                    <div class="btnSocial" id="btnInteraccionJuego">
+                        <i class="fa-regular fa-thumbs-down" id="iconosInteraccionJuego" ></i>
+                        <p>No me gusta</p>
+                    </div>
+                    <div class="btnSocial" id="btnInteraccionJuego">
+                        <i class="fa-regular fa-star" id="iconosInteraccionJuego"></i>
+                        <p>Favoritos</p>
+                    </div>
+                    <div class="btnSocial">
+                        <i class="fa-solid fa-share-from-square"></i>
+                        <p>Compartir</p>
+                    </div>
+                    <div class="btnSocial">
+                        <i class="fa-solid fa-ellipsis"></i>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div class="containerPagJuego">
-        <div class="breadcrumb">
-            <a href="index.html">Inicio</a>
-            <i class="fa-solid fa-angle-right"></i>
-            <a href="">Recomendado Para Ti</a>
-            <i class="fa-solid fa-angle-right"></i>
-            <a href="">World Cup 2022</a>
-        </div>
-        <div class="displayJuego">
-            <div class="displayInstruc">
-                <div class="videoJuego" id="contenedorCanvas">
-                    <div class="video">
-                        <img src="img/Pagina Juego/4-en-linea-video.gif" alt="">
-                    </div>
-                    <div class="seccionPlay">
-                        <h3>World Cup 2022</h3>
-                        <h5>Elegi tu seleccion favorita y compite para la ganar la copa del mundo!</h5>
-                        <button>Jugar <i class="fa-solid fa-play"></i></button>
-                    </div>
-                    <canvas class="canvas" id="canvas"></canvas>
+            <div class="contDescripcionJuego">
+                <div class="descripcion">
+                    <h2>World Cup 2022</h2>
+                    <p>World Cup 2022 es un juego basado en el clasico “4 en linea”, el cual es un juego de mesa para dos jugadores, en el que se introducen fichas en un tablero vertical con el objetivo de alinear cuatro consecutivas de un mismo color. Fue creado en 1974 por Ned Strongin y Howard Wexler para Milton Bradley Company.</p>
+                    <p>El objetivo de 4 en linea es alinear cuatro fichas sobre un tablero formado por seis filas y siete columnas. Cada jugador dispone de 21 fichas de un color (en este caso colores de la respectiva seleccion de futbols seleccionada).​ Por turnos, los jugadores deben introducir una ficha en la columna que prefieran (siempre que no esté completa) y ésta caerá a la posición más baja. Gana la partida el primero que consiga alinear cuatro fichas consecutivas de un mismo color en horizontal, vertical o diagonal.​ Si todas las columnas están llenas pero nadie ha hecho una fila válida, hay empate.</p>
+                    <h3>Desarrollador</h3>
+                    <p>Desarrollado por Diego Lopez.</p>
+                    <h3>Plataforma</h3>
+                    <p>World Cup 2022 es un juego de navegador web.</p>
+                    <h3>Fecha de lanzamiento</h3>
+                    <p>Septiembre 2022</p>
                 </div>
-                <div class="instrucciones">
-                    <h4>Instrucciones:</h4>
-                    <ul>
-                        <li>Cada jugador elige su equipo.</li>
-                        <li>Comienza un jugador introduciendo una ficha en la columna elegida; luego lo hace el otro jugador y asi sucesivamente.</li>
-                        <li>El primero que haya conseguido tener cuatro fichas alineadas del mismo color y en forma horizontal, vertcial o diagonal es el ganador de la partida.</li>
-                        <li>Finalizada la partida, se reinicia el tablero y se comienza de nuevo.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="socialJuego">
-                <div class="btnSocial" id="btnInteraccionJuego">
-                    <i class="fa-regular fa-thumbs-up" id="iconosInteraccionJuego"></i>
-                    <p>Me gusta</p>
-                </div>
-                <div class="btnSocial" id="btnInteraccionJuego">
-                    <i class="fa-regular fa-thumbs-down" id="iconosInteraccionJuego" ></i>
-                    <p>No me gusta</p>
-                </div>
-                <div class="btnSocial" id="btnInteraccionJuego">
-                    <i class="fa-regular fa-star" id="iconosInteraccionJuego"></i>
-                    <p>Favoritos</p>
-                </div>
-                <div class="btnSocial">
-                    <i class="fa-solid fa-share-from-square"></i>
-                    <p>Compartir</p>
-                </div>
-                <div class="btnSocial">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </div>
-            </div>
-        </div>
-        <div class="contDescripcionJuego">
-            <div class="descripcion">
-                <h2>World Cup 2022</h2>
-                <p>World Cup 2022 es un juego basado en el clasico “4 en linea”, el cual es un juego de mesa para dos jugadores, en el que se introducen fichas en un tablero vertical con el objetivo de alinear cuatro consecutivas de un mismo color. Fue creado en 1974 por Ned Strongin y Howard Wexler para Milton Bradley Company.</p>
-                <p>El objetivo de 4 en linea es alinear cuatro fichas sobre un tablero formado por seis filas y siete columnas. Cada jugador dispone de 21 fichas de un color (en este caso colores de la respectiva seleccion de futbols seleccionada).​ Por turnos, los jugadores deben introducir una ficha en la columna que prefieran (siempre que no esté completa) y ésta caerá a la posición más baja. Gana la partida el primero que consiga alinear cuatro fichas consecutivas de un mismo color en horizontal, vertical o diagonal.​ Si todas las columnas están llenas pero nadie ha hecho una fila válida, hay empate.</p>
-                <h3>Desarrollador</h3>
-                <p>Desarrollado por Diego Lopez.</p>
-                <h3>Plataforma</h3>
-                <p>World Cup 2022 es un juego de navegador web.</p>
-                <h3>Fecha de lanzamiento</h3>
-                <p>Septiembre 2022</p>
-            </div>
-            <div class="imagenesJuego">
-                <div class="cardImagenes">
-                    <h6>Competi por la Copa del Mundo desde la fase de grupos hasta el final</h6>
-                    <div class="containerSlider">
-                        <div class="slider" id="sliderGrupos">
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoA.jpg" alt="">
+                <div class="imagenesJuego">
+                    <div class="cardImagenes">
+                        <h6>Competi por la Copa del Mundo desde la fase de grupos hasta el final</h6>
+                        <div class="containerSlider">
+                            <div class="slider" id="sliderGrupos">
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoA.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoB.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoC.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoD.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoE.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoF.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoG.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderGrupos">
+                                    <img src="img/Pagina Juego/Grupos/GrupoH.jpg" alt="">
+                                </div>
+                                <button role="button" class="btnSliderLeft" id="btnSliderGruposLeft"><i class="fa-solid fa-angle-left"></i></button>
+                                <button role="button" class="btnSliderRigt" id="btnSliderGruposRight"><i class="fa-solid fa-angle-right"></i></button>
                             </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoB.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoC.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoD.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoE.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoF.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoG.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderGrupos">
-                                <img src="img/Pagina Juego/Grupos/GrupoH.jpg" alt="">
-                            </div>
-                            <button role="button" class="btnSliderLeft" id="btnSliderGruposLeft"><i class="fa-solid fa-angle-left"></i></button>
-                            <button role="button" class="btnSliderRigt" id="btnSliderGruposRight"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
-                </div>
-                <div class="cardImagenes">
-                    <h6>Gana la historica Copa del Mundo</h6>
-                    <div class="imagen">
-                        <img src="img/Pagina Juego/imagens world cup.jpg" alt="">
+                    <div class="cardImagenes">
+                        <h6>Gana la historica Copa del Mundo</h6>
+                        <div class="imagen">
+                            <img src="img/Pagina Juego/imagens world cup.jpg" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="cardImagenes">
-                    <h6>Juga en todos los estadios de Qatar</h6>
-                    <div class="containerSlider">
-                        <div class="slider" id="sliderEstadios">
-                            <div class="imagenSliderEstadios">
-                                <img src="img/Pagina Juego/Estadios/estadio 1.jpg" alt="">
+                    <div class="cardImagenes">
+                        <h6>Juga en todos los estadios de Qatar</h6>
+                        <div class="containerSlider">
+                            <div class="slider" id="sliderEstadios">
+                                <div class="imagenSliderEstadios">
+                                    <img src="img/Pagina Juego/Estadios/estadio 1.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderEstadios">
+                                    <img src="img/Pagina Juego/Estadios/estadio 2.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderEstadios">
+                                    <img src="img/Pagina Juego/Estadios/estadio3.jpg" alt="">
+                                </div>
+                                <div class="imagenSliderEstadios">
+                                    <img src="img/Pagina Juego/Estadios/estadio 4.jpg" alt="">
+                                </div>
+                                <button role="button" class="btnSliderLeft" id="btnSliderEstadiosLeft"><i class="fa-solid fa-angle-left"></i></button>
+                                <button role="button" class="btnSliderRigt" id="btnSliderEstadiosRight"><i class="fa-solid fa-angle-right"></i></button>
                             </div>
-                            <div class="imagenSliderEstadios">
-                                <img src="img/Pagina Juego/Estadios/estadio 2.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderEstadios">
-                                <img src="img/Pagina Juego/Estadios/estadio3.jpg" alt="">
-                            </div>
-                            <div class="imagenSliderEstadios">
-                                <img src="img/Pagina Juego/Estadios/estadio 4.jpg" alt="">
-                            </div>
-                            <button role="button" class="btnSliderLeft" id="btnSliderEstadiosLeft"><i class="fa-solid fa-angle-left"></i></button>
-                            <button role="button" class="btnSliderRigt" id="btnSliderEstadiosRight"><i class="fa-solid fa-angle-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="seccionComentarios">
-            <div class="titulo">
-                <h2>Comentarios</h2>
-            </div>
-            <div class="miComentario">
-                <div class="avatar">
-                    <i class="fa-regular fa-user"></i>
+            <div class="seccionComentarios">
+                <div class="titulo">
+                    <h2>Comentarios</h2>
                 </div>
-                <form action="">
-                    <div class="conteidoFormulario">
-                        <div class="input">
-                            <input type="text" placeholder="Agregar Comentario..." required id="inputComentario">
-                            <div class="underline"></div>
-                        </div>
-                        <div class="botonesComentario" id="botonesComentar">
-                            <button class="cancelar" id="btnCancelar">Cancelar</button> 
-                            <button class="comentar" id="btnComentar">Comentar</button> 
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="comentariosComunidad">
-                <div class="comentario">
-                    <div class="avatar" id="avatar1">
+                <div class="miComentario">
+                    <div class="avatar">
                         <i class="fa-regular fa-user"></i>
                     </div>
-                    <div class="contenidoComentario">
-                        <h6>Matias Rodriguez</h6>
-                        <p>Exelente version del clasico 4 en linea. Muy bueno para jugar con amigos.</p>
-                    </div>
+                    <form action="">
+                        <div class="conteidoFormulario">
+                            <div class="input">
+                                <input type="text" placeholder="Agregar Comentario..." required id="inputComentario">
+                                <div class="underline"></div>
+                            </div>
+                            <div class="botonesComentario" id="botonesComentar">
+                                <button class="cancelar" id="btnCancelar">Cancelar</button> 
+                                <button class="comentar" id="btnComentar">Comentar</button> 
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="comentario">
-                    <div class="avatar" id="avatar2">
-                        <i class="fa-regular fa-user"></i>
+                <div class="comentariosComunidad">
+                    <div class="comentario">
+                        <div class="avatar" id="avatar1">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="contenidoComentario">
+                            <h6>Matias Rodriguez</h6>
+                            <p>Exelente version del clasico 4 en linea. Muy bueno para jugar con amigos.</p>
+                        </div>
                     </div>
-                    <div class="contenidoComentario">
-                        <h6>Franco Gomez</h6>
-                        <p>Gran juego. Muy divertido y entretenido.</p>
+                    <div class="comentario">
+                        <div class="avatar" id="avatar2">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="contenidoComentario">
+                            <h6>Franco Gomez</h6>
+                            <p>Gran juego. Muy divertido y entretenido.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="comentario">
-                    <div class="avatar" id="avatar3">
-                        <i class="fa-regular fa-user"></i>
-                    </div>
-                    <div class="contenidoComentario">
-                        <h6>Martin Gonzalez</h6>
-                        <p>El mejor juego que he jugado. Sin duda de lo mejor que jugue en este sitio.</p>
+                    <div class="comentario">
+                        <div class="avatar" id="avatar3">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="contenidoComentario">
+                            <h6>Martin Gonzalez</h6>
+                            <p>El mejor juego que he jugado. Sin duda de lo mejor que jugue en este sitio.</p>
+                        </div>
                     </div>
                 </div>
             </div>

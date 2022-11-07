@@ -9,29 +9,27 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     let width = contenedorCanvas.clientWidth;
     canvas.height = height;
     canvas.width = width;
-    let cantFichasGanar = document.querySelector('#cantFichasGanar').value;
+    /*let cantFichasGanar = document.querySelector('#cantFichasGanar').value;*/
     let tablero = null;
-    if(cantFichasGanar == 4){
-        let tablero = new Tablero(ctx, 6, 7, 70, cantFichasGanar)
-    }
-    else if(cantFichasGanar == 5){
-        let tablero = new Tablero(ctx, 7, 8, 50, cantFichasGanar)
-    }
-    else if(cantFichasGanar == 6){
-        let tablero = new Tablero(ctx, 8, 9, 40, cantFichasGanar)
-    }
-
-    let cantFichasJugador = tablero.getCantidadFichas() /2;
     let turno = 1;
     let fichas = [];
     let ultimaFichaClicked = null;
-    let ultimaFichaJugadaX = null;
-    let ultimaFichaJugadaY = null;
     let isMouseDown = false;
     let jugador1 = null;
     let jugador2 = null;
     let ganador = -1;
 
+    let crearTablero = () =>{
+        if(cantFichasGanar == 4){
+            tablero = new Tablero(ctx, 6, 7, 70, cantFichasGanar)
+        }
+        else if(cantFichasGanar == 5){
+            tablero = new Tablero(ctx, 7, 8, 50, cantFichasGanar)
+        }
+        else if(cantFichasGanar == 6){
+            tablero = new Tablero(ctx, 8, 9, 40, cantFichasGanar)
+        }
+    }
 
     let agregarFichas = () => {
         let fichasJugador1 = jugador1.getFcihas();
@@ -46,6 +44,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     };
 
     let generarFichasCadaJugador = () => {
+        let cantFichasJugador = tablero.getCantidadFichas() /2;
         for (let i = 0; i <= cantFichasJugador; i++) {
             let src = './img/'+jugador1.getSeleccion()+'.png';
             let img = crearImagen(src);
@@ -86,7 +85,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         context.fillRect(0, 0, width, height);
     };
 
-    let iniciarJugadores= () =>{
+    let crearJugadores= () =>{
         let nombre1 = document.querySelector("#nombreJugador1").value;
         let nombre2 = document.querySelector("#nombreJugador2").value;
         let seleccion1 = document.querySelector("#seleccionJugador1").value;
@@ -102,7 +101,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
                 return ficha;
             }
         }
-    }
+    };
 
     let setGanador = (numJugador) => {
         ganador = numJugador;
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         else {
             
         }
-    }
+    };
 
     function onMouseDown(event) {
         isMouseDown = true;
@@ -124,14 +123,14 @@ document.addEventListener("DOMContentLoaded", (e) =>{
             ultimaFichaClicked = fichaClicked;
         }
         dibujarInicio();
-    }
+    };
     
     function onMouseMoved(event) {
         if (isMouseDown && ultimaFichaClicked != null) {
             ultimaFichaClicked.setPosicion(event.layerX, event.layerY);
             drawFigures();
         }
-    }
+    };
 
     function onMouseUp(event) {
         isMouseDown = false;
@@ -147,8 +146,6 @@ document.addEventListener("DOMContentLoaded", (e) =>{
                                 tablero.setFicha(i, j, ultimaFichaClicked.getJugador());
                                 ultimaFichaClicked.setPosicion(x + (tablero.getTamanioCasillero() * i), y - (tablero.getTamanioCasillero() * j));
                                 ultimaFichaClicked.setFueJugada(true);
-                                lastFigurePlayedX = i;
-                                lastFigurePlayedY = j;
                                 cambiarTurno();
                                 dibujarInicio();
                                 if (tablero.checkGanador(i, j, ultimaFichaClicked.getJugador())) {
@@ -163,7 +160,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
                 reubicarUltimaFicha();
             }
         }
-    }
+    };
 
     let cambiarTurno = () => {
         if (turno == 1) {
@@ -172,7 +169,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         else {
             turno = 1;
         }
-    }
+    };
 
     let reubicarUltimaFicha = () => {
         if (ultimaFichaClicked != null) {
@@ -181,7 +178,36 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         }
         ultimaFichaClicked = null;
         dibujarInicio();
-    }
+    };
 
+    let iniciarJuego = () => {
+        ganador = -1;
+        crearJugadores();
+        generarFichasCadaJugador();
+        agregarFichas();
+        tablero.setCantFichasGanar();
+        tablero.iniciarTablero();
+        tablero.iniciarMatriz();
+        canvas.addEventListener('mousedown', onMouseDown, false);
+        canvas.addEventListener('mouseup', onMouseUp, false);
+        canvas.addEventListener('mousemove', onMouseMoved, false);
+        dibujarInicio();
+    };
+
+    let reiniciarJuego = () => {
+        ganador = -1;
+        turno = 1;
+        fichas = [];
+        tablero.iniciarMatriz();
+        generarFichasCadaJugador();
+        agregarFichas();
+        reubicarUltimaFicha();
+    };
+
+    let mostrarJuego = () => {
+        canvas.classList.add("mostrarCanvas");
+    };
+    
+    document.querySelector('#btnPlay').addEventListener("click", mostrarJuego);
 
 });

@@ -1,4 +1,4 @@
-class Rectangulo {
+class Casillero {
     constructor() {
 
     }

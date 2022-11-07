@@ -1911,3 +1911,32 @@ footer{
     left: 0;
     background-color: #fff;
 }
+
+.canvas{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mostrarCanvas{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ------ Estilos para menus Juego -------*/ 
+
+.contenedorMenusJuego{
+    position: relative;
+}
+
+.MenuInicioJuego{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 100px;
+    left: 50%;
+    /*margin-top: 20%;*/
+    margin-left: -300px;
+    background-color: #fff;
+    z-index: 500;
+}
+
