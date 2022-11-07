@@ -15,7 +15,7 @@ class Tablero{
                 let posX = (x * this.tamanio)  /* + lado jugador 1*/;
                 let posY = (y * this.tamanio) + 100;
                 let casillero = new Casillero();
-                casillero.addImage("./img/casillero.png", posX, posY, this.tamanio);
+                casillero.addImage("./img/casillero.png", posX, posY, this.tamanio, this.ctx);
             }
         }
     }

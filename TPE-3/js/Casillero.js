@@ -3,10 +3,10 @@ class Casillero {
 
     }
     
-    addImage(src, posX, posY, tamanio){
+    addImage(src, posX, posY, tamanio, ctx){
         let img = new Image();
         img.src = src;
-        context.drawImage(img, posX, posY, tamanio, tamanio);
+        ctx.drawImage(img, posX, posY, tamanio, tamanio);
     }
 
 }

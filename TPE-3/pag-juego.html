@@ -19,11 +19,12 @@
 </head>
 <body>
     <div class="contenedorMenusJuego">
-        <div class="MenuInicioJuego">
+        <div class="filtro" id="filtro"></div>
+        <div class="MenuInicioJuego" id="MenuInicioJuego">
             <div class="jugadores">
                 <div class="jugador1">
                     <label for="nombreJugador1">Nombre Jugador 1</label>
-                    <input type="text" id="nombreJugador1">
+                    <input type="text" id="nombreJugador1" placeholder="Nombre">
                     <label for="seleccionJugador1">Elija su seleccion</label>
                     <select name="seleccionJugador1" id="seleccionJugador1">
                         <option value="argentina">Argentina</option>
@@ -38,9 +39,9 @@
                 </div>
                 <div class="jugador2">
                     <label for="nombreJugador2">Nombre Jugador 2</label>
-                    <input type="text" id="nombreJugador2">
-                    <label for="seleccionJugador1">Elija su seleccion</label>
-                    <select name="seleccionJugador1" id="seleccionJugador1">
+                    <input type="text" id="nombreJugador2" placeholder="Nombre">
+                    <label for="seleccionJugador2">Elija su seleccion</label>
+                    <select name="seleccionJugador2" id="seleccionJugador2">
                         <option value="argentina">Argentina</option>
                         <option value="alemania">Alemania</option>
                         <option value="brasil">Brasil</option>
@@ -53,13 +54,17 @@
                 </div>
             </div>
             <div class="opciones">
-                <label for="cantFichasGanar">Seleccione el modo de juego</label>
-                <select name="cantFichasGanar" id="cantFichasGanar">
-                    <option value="4">4 fichas para ganar</option>
-                    <option value="5">5 fichas para ganar</option>
-                    <option value="6">6 fichas para ganar</option>
-                </select>
-                <button class="btnComenzar" id="btnComenzar">Comenzar</button>
+                <div class="cantFichas">
+                    <label for="cantFichasGanar">Seleccione el modo de juego</label>
+                    <select name="cantFichasGanar" id="cantFichasGanar">
+                        <option value="4">4 fichas para ganar</option>
+                        <option value="5">5 fichas para ganar</option>
+                        <option value="6">6 fichas para ganar</option>
+                    </select>
+                </div>
+                <div class="contBtnComenzar">
+                    <button class="btnComenzar" id="btnComenzar">Comenzar</button>
+                </div>
             </div>
         </div>
         <header>

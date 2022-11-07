@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     let width = contenedorCanvas.clientWidth;
     canvas.height = height;
     canvas.width = width;
-    /*let cantFichasGanar = document.querySelector('#cantFichasGanar').value;*/
+    let cantFichasGanar = document.querySelector('#cantFichasGanar').value;
     let tablero = null;
     let turno = 1;
     let fichas = [];
@@ -18,26 +18,30 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     let jugador1 = null;
     let jugador2 = null;
     let ganador = -1;
+    let tamanio = 0;
 
     let crearTablero = () =>{
         if(cantFichasGanar == 4){
-            tablero = new Tablero(ctx, 6, 7, 70, cantFichasGanar)
+            tamanio = 70;
+            tablero = new Tablero(ctx, 6, 7, tamanio, cantFichasGanar)
         }
         else if(cantFichasGanar == 5){
-            tablero = new Tablero(ctx, 7, 8, 50, cantFichasGanar)
+            tamanio = 50;
+            tablero = new Tablero(ctx, 7, 8, tamanio, cantFichasGanar)
         }
         else if(cantFichasGanar == 6){
-            tablero = new Tablero(ctx, 8, 9, 40, cantFichasGanar)
+            tamanio = 40;
+            tablero = new Tablero(ctx, 8, 9, tamanio, cantFichasGanar)
         }
     }
 
     let agregarFichas = () => {
-        let fichasJugador1 = jugador1.getFcihas();
-        let fichasJugador2 = jugador2.getFcihas();
-        for(let i =0; i < fichasJugador1.length(); i++){
+        let fichasJugador1 = jugador1.getFichas();
+        let fichasJugador2 = jugador2.getFichas();
+        for(let i =0; i < fichasJugador1.length; i++){
             fichas.push(fichasJugador1[i]);
         }
-        for(let i =0; i < fichasJugador2.length(); i++){
+        for(let i =0; i < fichasJugador2.length; i++){
             fichas.push(fichasJugador2[i]);
         }
         dibujarInicio();
@@ -46,16 +50,16 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     let generarFichasCadaJugador = () => {
         let cantFichasJugador = tablero.getCantidadFichas() /2;
         for (let i = 0; i <= cantFichasJugador; i++) {
-            let src = './img/'+jugador1.getSeleccion()+'.png';
+            let src = './img/Fichas/'+jugador1.getSeleccion()+'.png';
             let img = crearImagen(src);
-            let ficha = new Ficha((width*0.2) + (Math.random() * 150), (height / 2) + (Math.random() * 150), ctx, tamanio - (tamanio*0.15), img, jugador1.getNumJugador());
+            let ficha = new Ficha(/*(width*0.2) + (Math.random() * 150)*/40, (height / 2) + (Math.random() * 150), ctx, tamanio - (tamanio*0.15), img, jugador1.getNumJugador());
             jugador1.addFicha(ficha);
         }
 
         for (let i = 0; i <= cantFichasJugador; i++) {
-            let src = './img/'+jugador2.getSeleccion()+'.png';
+            let src = './img/Fichas/'+jugador2.getSeleccion()+'.png';
             let img = crearImagen(src);
-            let ficha = new Ficha((width*0.8) + (Math.random() * 150), (height / 2) + (Math.random() * 150), ctx, tamanio - (tamanio*0.15), img, jugador2.getNumJugador());
+            let ficha = new Ficha(/*(width*0.8) + (Math.random() * 150)*/190, (height / 2) + (Math.random() * 150), ctx, tamanio - (tamanio*0.15), img, jugador2.getNumJugador());
             jugador2.addFicha(ficha);
         }
     };
@@ -81,8 +85,8 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     };
 
     let borrarCanvas = () => {
-        context.fillStyle = '#FFF';
-        context.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#FFF';
+        ctx.fillRect(0, 0, width, height);
     };
 
     let crearJugadores= () =>{
@@ -90,8 +94,8 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         let nombre2 = document.querySelector("#nombreJugador2").value;
         let seleccion1 = document.querySelector("#seleccionJugador1").value;
         let seleccion2 = document.querySelector("#seleccionJugador2").value;
-        jugador1 = new Jugador(nombre1, seleccion1, posX, posY, ctx, 1);
-        jugador2 = new Jugador(nombre2, seleccion2, posX, posY, ctx, 2);
+        jugador1 = new Jugador(nombre1, seleccion1, Math.round(Math.random() * (width*0.2)), Math.round(Math.random() * (height*0.8)), ctx, 1);
+        jugador2 = new Jugador(nombre2, seleccion2, Math.round(Math.random() * (width*0.8)), Math.round(Math.random() * (height*0.8)), ctx, 2);
     };
 
     function buscarFichaClicked(x, y) {
@@ -128,7 +132,7 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     function onMouseMoved(event) {
         if (isMouseDown && ultimaFichaClicked != null) {
             ultimaFichaClicked.setPosicion(event.layerX, event.layerY);
-            drawFigures();
+            dibujarInicio();
         }
     };
 
@@ -180,9 +184,21 @@ document.addEventListener("DOMContentLoaded", (e) =>{
         dibujarInicio();
     };
 
+    let diBujarPuntajeYTurno = () => {
+        ctx.strokeStyle = "#FF0";
+        ctx.font = "20px Comic Sans MS";
+        ctx.fillStyle = "#F00";
+        ctx.fillText(jugador1.getNombre(), 20, 25);
+        ctx.fillStyle = "#000";
+        ctx.fillText(jugador2.getNombre(), 20, 50);
+    }
+
     let iniciarJuego = () => {
+        filtro.classList.remove("activar");
+        menuIncio.classList.remove("activar");
         ganador = -1;
         crearJugadores();
+        crearTablero();
         generarFichasCadaJugador();
         agregarFichas();
         tablero.setCantFichasGanar();
@@ -206,8 +222,14 @@ document.addEventListener("DOMContentLoaded", (e) =>{
 
     let mostrarJuego = () => {
         canvas.classList.add("mostrarCanvas");
+        filtro.classList.add("activar");
+        menuIncio.classList.add("activar");
+
     };
-    
+
+    let filtro = document.querySelector('#filtro');
+    let menuIncio = document.querySelector('#MenuInicioJuego');
     document.querySelector('#btnPlay').addEventListener("click", mostrarJuego);
+    document.querySelector('#btnComenzar').addEventListener("click", iniciarJuego);
 
 });
